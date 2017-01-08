@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Prototipo</string>
+    <string name="action_settings">Configuracion</string>
+    <string name="AcercaDe">Informacion</string>
+    <string name="No_tag">Tarjeta no encontrada</string>
+
+</resources>

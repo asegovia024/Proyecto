@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.antonio.pr1.MainActivity">
+    <item
+        android:id="@+id/Info"
+        android:orderInCategory="100"
+        android:title="@string/AcercaDe"
+        android:icon="@drawable/info"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/Config"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        android:icon="@drawable/config"
+        app:showAsAction="ifRoom" />
+
+
+</menu>
