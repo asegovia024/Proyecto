@@ -200,20 +200,7 @@ public class AccionActivity extends AppCompatActivity implements View.OnClickLis
         nfcAdapter.disableForegroundDispatch(this);}
 
 
-    private void enableForegroundDispachSistem(){
 
-        Intent intent = new Intent(this,AccionActivity.class).addFlags(Intent.FLAG_RECEIVER_REPLACE_PENDING);
-        PendingIntent pendingIntent =  PendingIntent.getActivity(this, 0 ,intent,0);
-        IntentFilter[] intentFilters =new IntentFilter[]{};
-        nfcAdapter.enableForegroundDispatch(this, pendingIntent,intentFilters,null);
-
-    }
-
-
-
-    private void disableForegroundDispachSystem(){
-        nfcAdapter.disableForegroundDispatch(this);
-    }
 
 
 
@@ -277,7 +264,6 @@ public class AccionActivity extends AppCompatActivity implements View.OnClickLis
                 "text/vcard".getBytes(),
                 new byte[0],
                 payload);
-
 
 
         return nfcRecord;

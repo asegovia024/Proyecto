@@ -203,7 +203,7 @@ public class ContactosActivity extends AppCompatActivity implements View.OnClick
                     }
                 }
                 break;
-            //case 2:
+
         }
 
     }
@@ -306,7 +306,7 @@ public class ContactosActivity extends AppCompatActivity implements View.OnClick
                     ndef.close();
                     return;
                 }
-                ndef.writeNdefMessage(ndefMessage); //se llama a si mismo ?¿?¿?
+                ndef.writeNdefMessage(ndefMessage);
                 ndef.close();
                 Toast.makeText(this, "Mensaje escrito", Toast.LENGTH_LONG).show();
 
