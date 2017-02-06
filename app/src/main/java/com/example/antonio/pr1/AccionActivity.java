@@ -55,7 +55,6 @@ public class AccionActivity extends AppCompatActivity implements View.OnClickLis
 
 
 
-
         nfcAdapter =NfcAdapter.getDefaultAdapter(context);
 
 
@@ -105,7 +104,7 @@ public class AccionActivity extends AppCompatActivity implements View.OnClickLis
             NdefMessage ndefMessage = null;
 
 
-            try { //------------------------------------es aqui donde no entra----------------------------------
+            try {
              //   ndefMessage = n.write(nn, tag, false);
                 ndefMessage=write(nn,tag,false);
             } catch (IOException e) {

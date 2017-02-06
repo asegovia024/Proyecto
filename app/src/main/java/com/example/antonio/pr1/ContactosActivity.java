@@ -65,14 +65,14 @@ public class ContactosActivity extends AppCompatActivity implements View.OnClick
         }
 
 
-        escribircontacto = (Button) findViewById(R.id.escribircontacto);
+       /* escribircontacto = (Button) findViewById(R.id.escribircontacto);
         escribircontacto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
 
             }
-        });
+        });*/
 
 
 
@@ -83,7 +83,7 @@ public class ContactosActivity extends AppCompatActivity implements View.OnClick
         // numero.setOnClickListener(this);
 
 
-        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_CONTACTS}, 1); //pide permiso para leer los contactos
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_CONTACTS}, 1); // permiso para leer los contactos
 
 
 
