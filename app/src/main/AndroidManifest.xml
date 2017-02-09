@@ -7,12 +7,17 @@
         android:minSdkVersion="10"
         android:targetSdkVersion="19" />
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
      
     <uses-permission android:name="android.permission.NFC" />
     <uses-feature android:name="android.hardware.nfc" android:required="false"/>
 
     <uses-permission android:name="android.permission.NFC"/>
+    <uses-permission android:name="android.permission.CALL_PHONE">
+
+    </uses-permission>
+
 
     <!-- <android:uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
      <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />

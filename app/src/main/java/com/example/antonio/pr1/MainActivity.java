@@ -1,10 +1,13 @@
 package com.example.antonio.pr1;
 
+import android.Manifest;
 import android.app.PendingIntent;
 import android.content.ClipData;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.nfc.NdefMessage;
 import android.nfc.NdefRecord;
 import android.nfc.NfcAdapter;
@@ -13,9 +16,11 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.util.Pair;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.Menu;
@@ -29,10 +34,18 @@ import java.io.UnsupportedEncodingException;
 
 public class MainActivity extends AppCompatActivity {
 
-    
+
     NfcAdapter nfcAdapter;
     EditText tagContent;
+    EditText tagContent2;
+
+    int Accion;
+    String Mensaje;
+    String Contacto;
+
     Context context;
+    boolean Lacc = false; //comprobamos que la accion se ha leido
+    boolean Lcon = false; //comprobamos que el contacto se ha leido
 
 
     @Override
@@ -42,10 +55,11 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        context=this;
+        context = this;
 
-        nfcAdapter =NfcAdapter.getDefaultAdapter(context);
-        tagContent =(EditText)findViewById(R.id.tagContent);
+        nfcAdapter = NfcAdapter.getDefaultAdapter(context);
+        tagContent = (EditText) findViewById(R.id.tagContent);
+        tagContent2 = (EditText) findViewById(R.id.TagContent2);
 
         //boton rosa que hay que activar para ponerle que sea el de configuracion
         /*
@@ -59,9 +73,9 @@ public class MainActivity extends AppCompatActivity {
         });*/
 
 
-        if (nfcAdapter!=null && nfcAdapter.isEnabled()){
+        if (nfcAdapter != null && nfcAdapter.isEnabled()) {
 
-        }else{
+        } else {
             Toast.makeText(this, "Error de Nfc, no disponible", Toast.LENGTH_LONG).show();//cambiar por activacion o por la opcion de activacion del nfc
         }
 
@@ -83,35 +97,30 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
 
-            if (intent.hasExtra(nfcAdapter.EXTRA_TAG)) {
-                Parcelable[] parcelables = intent.getParcelableArrayExtra(nfcAdapter.EXTRA_NDEF_MESSAGES);
+        if (intent.hasExtra(nfcAdapter.EXTRA_TAG)) {
+            Parcelable[] parcelables = intent.getParcelableArrayExtra(nfcAdapter.EXTRA_NDEF_MESSAGES);
 
-                if (parcelables != null && parcelables.length > 0) {
-                    readtag((NdefMessage) parcelables[0]);
-                } else {
-                    Toast.makeText(this, "No mensaje", Toast.LENGTH_LONG).show();
-                }
+            if (parcelables != null && parcelables.length > 0) {
+                readtag((NdefMessage) parcelables[0]);
+            } else {
+                Toast.makeText(this, "No mensaje", Toast.LENGTH_LONG).show();
             }
         }
+    }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        super.onCreateOptionsMenu( menu);
-        MenuInflater inflater =getMenuInflater();
+        super.onCreateOptionsMenu(menu);
+        MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_main, menu);
         return true;
     }
-
-
-
-
 
 
     @Override
@@ -119,9 +128,9 @@ public class MainActivity extends AppCompatActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-       // int id = item.getItemId();
+        // int id = item.getItemId();
 
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.Config:
                 //lanzar configuracion
                 Intent config = new Intent(MainActivity.this, ConfigActivity.class);
@@ -141,15 +150,37 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-    protected  void readtag(NdefMessage ndefMessage){
+    protected void readtag(NdefMessage ndefMessage) {
 
         NdefRecord[] ndefRecords = ndefMessage.getRecords();
+        if (ndefRecords != null && ndefRecords.length > 0) {
+            NdefRecord ndefRecord = ndefRecords[0];
 
-        if (ndefRecords != null && ndefRecords.length >0){
-            NdefRecord ndefRecord =ndefRecords[0];
-            String texto =getTextFromTag(ndefRecord);
-            tagContent.setText(texto);
+            String texto = getTextFromTag(ndefRecord);
+
+
+            comprobar(texto);
+
+
+            if (Accion == 2) {
+
+                Intent intent = new Intent(Intent.ACTION_CALL);
+                intent.setData(Uri.parse("tel:" + Contacto));//fallo aqui abajo
+                if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                    // TODO: Consider calling
+                    //    ActivityCompat#requestPermissions
+                    // here to request the missing permissions, and then overriding
+                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                    //                                          int[] grantResults)
+                    // to handle the case where the user grants the permission. See the documentation
+                    // for ActivityCompat#requestPermissions for more details.
+                    return;
+                }
+                startActivity(intent);
+            }
+
+
+
         }else{
             Toast.makeText(this,"Mensaje no encontrado", Toast.LENGTH_LONG).show();
         }
@@ -182,11 +213,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
-
-
-
-
     protected void enableForegroundDispachSistem(){
 
         Intent  intent = new Intent(this ,MainActivity.class).addFlags(Intent.FLAG_RECEIVER_REPLACE_PENDING);
@@ -201,6 +227,57 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    //--------------------------------------------0-------------------------------------------------------
+
+
+
+    protected void comprobar (String cadena){ //comprobacion sobre que tipo de tag estamos leyendo y si es valido, ademas
+//isNumeric(cadena) 12 tam
+        if (cadena.length() >= 12 &&  isNumeric(cadena) ){ //-----------no reconoce contactos, supongo un error en is numeric
+            Lcon =true;
+           // Toast.makeText(this, cadena+ "Es un contacto tam: " +cadena.length(), Toast.LENGTH_LONG).show();
+            Contacto= cadena;
+             Toast.makeText(this, Contacto+ "Guardado", Toast.LENGTH_LONG).show();
+
+        }else if (cadena.indexOf("#") ==1) {
+            Accion= Integer.parseInt(cadena.substring(0, 1));
+            Toast.makeText(this,"Accion "+ Accion+ " Guardada", Toast.LENGTH_LONG).show();
+
+            Lacc = true;
+          //  Toast.makeText(this,"Es un accion "+ op, Toast.LENGTH_LONG).show();
+
+        }else{
+            Toast.makeText(this,"Mensaje no reconocido", Toast.LENGTH_LONG).show();
+
+        }
+
+    }
+
+
+    protected   boolean isNumeric(String cadena){ //comprobamos que una cadena puede ser numerico
+        if (cadena == null  || cadena.isEmpty()){
+            return false;
+        }
+        int i=0;
+        if (cadena.charAt(0)== '-' ){
+            if (cadena.length() > 1){
+                i++;
+            }else{
+                return false;
+            }
+        }
+        for(;i < cadena.length(); i++){
+            //ingnorar espacios en blanco
+            if(cadena.charAt(i)==' '){
+            i++;
+            }
+            if (!Character.isDigit(cadena.charAt(i))  ){
+                return false;
+            }
+        }
+
+        return true;
+    }
 
 
 

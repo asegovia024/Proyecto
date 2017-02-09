@@ -242,16 +242,16 @@ public class ContactosActivity extends AppCompatActivity implements View.OnClick
 
     }
 
-
     public NdefRecord createVcardRecord(String name, String org, String tel, String email)
             throws UnsupportedEncodingException {
 
-        String payloadStr = "BEGIN:VCARD" +"\n"+
+      /*  String payloadStr = "BEGIN:VCARD" +"\n"+
                 "VERSION:2.1" +"\n" +
                 "N:;" + name + "\n" +
                 "ORG:"+org+"\n"+
                 "TEL:"+tel+"\n"+
-                "EMAIL:"+email+"\n" +"END:VCARD";
+                "EMAIL:"+email+"\n" +"END:VCARD";*/
+        String payloadStr = tel;
         byte[] uriField = payloadStr.getBytes(Charset.forName("US-ASCII"));
         byte[] payload = new byte[uriField.length + 1];
         System.arraycopy(uriField, 0, payload, 1, uriField.length);
