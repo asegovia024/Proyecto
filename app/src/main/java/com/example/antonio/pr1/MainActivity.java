@@ -19,6 +19,8 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.telephony.SmsManager;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.util.Pair;
 import android.view.MenuInflater;
@@ -47,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
     boolean Lacc = false; //comprobamos que la accion se ha leido
     boolean Lcon = false; //comprobamos que el contacto se ha leido
 
+    boolean simReady;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +64,13 @@ public class MainActivity extends AppCompatActivity {
         nfcAdapter = NfcAdapter.getDefaultAdapter(context);
         tagContent = (EditText) findViewById(R.id.tagContent);
         tagContent2 = (EditText) findViewById(R.id.TagContent2);
+
+
+        // informacion de la simm
+
+        TelephonyManager telephonyManager = ((TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE));
+        simReady = telephonyManager.getSimState() == TelephonyManager.SIM_STATE_READY;
+
 
         //boton rosa que hay que activar para ponerle que sea el de configuracion
         /*
@@ -158,27 +169,66 @@ public class MainActivity extends AppCompatActivity {
 
             String texto = getTextFromTag(ndefRecord);
 
-
             comprobar(texto);
 
 
-            if (Accion == 2) {
+            if (Accion == 2 && Contacto != null) {
 
-                Intent intent = new Intent(Intent.ACTION_CALL);
-                intent.setData(Uri.parse("tel:" + Contacto));//fallo aqui abajo
-                if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                    // TODO: Consider calling
-                    //    ActivityCompat#requestPermissions
-                    // here to request the missing permissions, and then overriding
-                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                    //                                          int[] grantResults)
-                    // to handle the case where the user grants the permission. See the documentation
-                    // for ActivityCompat#requestPermissions for more details.
-                    return;
+                try {
+                    String url = "tel:" + Contacto;
+
+                    // if (url.startsWith("tel:")){
+
+                    //si funciona con action dial
+                    // Intent intent = new Intent(Intent.ACTION_DIAL,Uri.parse(url));
+                    Intent intent = new Intent(Intent.ACTION_CALL);
+
+                    if (simReady) {
+                        // intent.putExtra("com.android.phone.extra.slot", 0); //For sim 1
+                        intent.putExtra("simSlot", 0); //For sim 1
+
+                    } else {
+                        intent.putExtra("com.android.phone.extra.slot", 1); //For sim 2
+
+                    }
+                    intent.setData(Uri.parse(url));
+                    // startActivity(intent);
+
+
+                    if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                        // TODO: Consider calling
+                        //    ActivityCompat#requestPermissions
+                        // here to request the missing permissions, and then overriding
+                        //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                        //                                          int[] grantResults)
+                        // to handle the case where the user grants the permission. See the documentation
+                        // for ActivityCompat#requestPermissions for more details.
+                        return;
+                    }
+                    startActivity(intent);
+
+
+                } catch (Exception e){
+                    Toast.makeText(this,"No se ha podido realizar la llamada", Toast.LENGTH_LONG).show();
+
                 }
-                startActivity(intent);
-            }
+             //}
+            }else if (Accion == 1 && Contacto != null) {
+                Mensaje = texto.substring(2);
 
+                SmsManager sms =SmsManager.getDefault();
+                sms.sendTextMessage(Contacto,null,Mensaje,null,null);
+
+
+              /*  Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("sms:" + Contacto));
+                intent.putExtra("sms_body", Mensaje);
+                startActivity(intent);*/
+
+
+            }else if (Accion == 3 && Contacto != null) {
+                Toast.makeText(this,"Seccion en desarollo", Toast.LENGTH_LONG).show();
+
+            }
 
 
         }else{
@@ -210,9 +260,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
-
-
     protected void enableForegroundDispachSistem(){
 
         Intent  intent = new Intent(this ,MainActivity.class).addFlags(Intent.FLAG_RECEIVER_REPLACE_PENDING);
@@ -227,15 +274,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    //--------------------------------------------0-------------------------------------------------------
+    //--------------------------------------------Funciones de comprobación -------------------------------------------------------
 
 
 
-    protected void comprobar (String cadena){ //comprobacion sobre que tipo de tag estamos leyendo y si es valido, ademas
-//isNumeric(cadena) 12 tam
-        if (cadena.length() >= 12 &&  isNumeric(cadena) ){ //-----------no reconoce contactos, supongo un error en is numeric
+    protected void comprobar (String cadena){ //comprobacion sobre que tipo de tag estamos leyendo y si es valido
+        if (cadena.length() >= 12 &&  isNumeric(cadena) ){
             Lcon =true;
-           // Toast.makeText(this, cadena+ "Es un contacto tam: " +cadena.length(), Toast.LENGTH_LONG).show();
             Contacto= cadena;
              Toast.makeText(this, Contacto+ "Guardado", Toast.LENGTH_LONG).show();
 
@@ -244,13 +289,10 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this,"Accion "+ Accion+ " Guardada", Toast.LENGTH_LONG).show();
 
             Lacc = true;
-          //  Toast.makeText(this,"Es un accion "+ op, Toast.LENGTH_LONG).show();
 
         }else{
             Toast.makeText(this,"Mensaje no reconocido", Toast.LENGTH_LONG).show();
-
         }
-
     }
 
 

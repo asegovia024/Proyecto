@@ -7,7 +7,6 @@
         android:minSdkVersion="10"
         android:targetSdkVersion="19" />
 
-    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
      
     <uses-permission android:name="android.permission.NFC" />
@@ -15,6 +14,9 @@
 
     <uses-permission android:name="android.permission.NFC"/>
     <uses-permission android:name="android.permission.CALL_PHONE">
+
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+
 
     </uses-permission>
 
