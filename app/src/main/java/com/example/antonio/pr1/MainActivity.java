@@ -59,6 +59,13 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
+        ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.SEND_SMS},1);
+
+
+        Mensaje=" ";
+         Contacto=" ";
+
         context = this;
 
         nfcAdapter = NfcAdapter.getDefaultAdapter(context);
@@ -216,9 +223,21 @@ public class MainActivity extends AppCompatActivity {
             }else if (Accion == 1 && Contacto != null) {
                 Mensaje = texto.substring(2);
 
-                SmsManager sms =SmsManager.getDefault();
-                sms.sendTextMessage(Contacto,null,Mensaje,null,null);
 
+               // Toast.makeText(this,"Se intentara mandar "+ Mensaje +" a "+ Contacto, Toast.LENGTH_LONG).show();
+
+
+                try {
+
+                    SmsManager sms = SmsManager.getDefault();
+                    sms.sendTextMessage(Contacto,null,Mensaje,null,null);
+
+                }catch (Exception e){
+                    Toast.makeText(getApplicationContext(),e.getMessage().toString(),
+                            Toast.LENGTH_LONG).show();
+                   // Toast.makeText(this,"No se ha podido enviar el mensaje", Toast.LENGTH_LONG).show();
+
+                }
 
               /*  Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("sms:" + Contacto));
                 intent.putExtra("sms_body", Mensaje);

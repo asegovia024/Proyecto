@@ -3,15 +3,6 @@
 
     <item
         is-multidex="true"
-        jar="/Users/antonio/AndroidStudioProjects/ProyectoGit/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="f5d52dc85e3c10354e5d4ef03097ea98ae4fcddf">
-        <dex dex="/Users/antonio/AndroidStudioProjects/ProyectoGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_7378b227c0d40ced7dcf45da6e2b6d7317376090/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/Users/antonio/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.4.0/support-annotations-23.4.0.jar"
         jumboMode="true"
         optimize="true"
@@ -21,12 +12,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/antonio/AndroidStudioProjects/ProyectoGit/app/build/intermediates/exploded-aar/com.android.support/design/23.4.0/jars/classes.jar"
+        jar="/Users/antonio/AndroidStudioProjects/ProyectoGit/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
-        <dex dex="/Users/antonio/AndroidStudioProjects/ProyectoGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-23.4.0_1fe8843b02f7b4d83eeeb079b3041eaf7f2ca466/classes.dex" />
+        sha1="97bee58d2540db378725b31cf693e8c9d19f32b1">
+        <dex dex="/Users/antonio/AndroidStudioProjects/ProyectoGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_7378b227c0d40ced7dcf45da6e2b6d7317376090/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -39,20 +30,11 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/antonio/AndroidStudioProjects/ProyectoGit/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.4.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
-        <dex dex="/Users/antonio/AndroidStudioProjects/ProyectoGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-23.4.0_2eeb34c3ab596077ae0f1d3766092cc043090ad2/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/Users/antonio/AndroidStudioProjects/ProyectoGit/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="72be2e8f88ea02a747a5e9fedde9e251766e1001">
+        sha1="5fd371b5016662908876f45d9976aca456be8895">
         <dex dex="/Users/antonio/AndroidStudioProjects/ProyectoGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_64d50843dca56dc37274ab94142d42a5af98f381/classes.dex" />
     </item>
     <item
@@ -90,6 +72,24 @@
         revision="24.0.3"
         sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
         <dex dex="/Users/antonio/AndroidStudioProjects/ProyectoGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.4.0_7dee91bf91652dfe2e742a07d68280e0bc079d8b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/antonio/AndroidStudioProjects/ProyectoGit/app/build/intermediates/exploded-aar/com.android.support/design/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
+        <dex dex="/Users/antonio/AndroidStudioProjects/ProyectoGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-23.4.0_1fe8843b02f7b4d83eeeb079b3041eaf7f2ca466/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/antonio/AndroidStudioProjects/ProyectoGit/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="/Users/antonio/AndroidStudioProjects/ProyectoGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-23.4.0_2eeb34c3ab596077ae0f1d3766092cc043090ad2/classes.dex" />
     </item>
 
 </items>
