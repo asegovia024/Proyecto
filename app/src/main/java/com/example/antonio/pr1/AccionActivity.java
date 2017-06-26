@@ -72,8 +72,8 @@ public class AccionActivity extends AppCompatActivity implements View.OnClickLis
         call =(Button)findViewById(R.id.call);
         call.setOnClickListener(this);
 
-        w =(Button)findViewById(R.id.wapp);
-        w.setOnClickListener(this);
+      /*  w =(Button)findViewById(R.id.wapp);
+        w.setOnClickListener(this);*/
 
         ttexto =(EditText)findViewById(R.id.editText);
 
@@ -153,10 +153,10 @@ public class AccionActivity extends AppCompatActivity implements View.OnClickLis
                 // do your code
                 break;
 
-            case R.id.wapp:
+          /*  case R.id.wapp:
                 op="3";
                 // do your code
-                break;
+                break;*/
 
 
         }
@@ -308,6 +308,7 @@ public class AccionActivity extends AppCompatActivity implements View.OnClickLis
             }
             Ndef ndef =Ndef.get(tag);
             if(ndef == null){
+             //   n.formatTag(tag,ndefMessage);
                 formatTag(tag, ndefMessage);
             }else {
                 ndef.connect();

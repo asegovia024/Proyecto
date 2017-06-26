@@ -11,7 +11,7 @@
     tools:context="com.example.antonio.pr1.ConfigActivity">
 
     <Button
-        android:text="Añadir Contacto"
+        android:text="@string/addcontacto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -20,7 +20,7 @@
         android:id="@+id/AddCont" />
 
     <Button
-        android:text="Añadir Acción"
+        android:text="@string/addaccion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="120dp"

@@ -108,7 +108,7 @@ public class NFCtools {
 
 
 
-    private boolean formatTag(Tag tag,NdefMessage ndefMessage){//escribe el mdemessage en el tag
+    public boolean formatTag(Tag tag,NdefMessage ndefMessage){//escribe el mdemessage en el tag
 
 
         try{

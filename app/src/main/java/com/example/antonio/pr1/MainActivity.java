@@ -62,15 +62,15 @@ public class MainActivity extends AppCompatActivity {
 
         ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.SEND_SMS},1);
 
-
+        Accion=0;
         Mensaje=" ";
-         Contacto=" ";
+         Contacto=null;
 
         context = this;
 
         nfcAdapter = NfcAdapter.getDefaultAdapter(context);
-        tagContent = (EditText) findViewById(R.id.tagContent);
-        tagContent2 = (EditText) findViewById(R.id.TagContent2);
+       // tagContent = (EditText) findViewById(R.id.tagContent);
+       // tagContent2 = (EditText) findViewById(R.id.TagContent2);
 
 
         // informacion de la simm
@@ -199,6 +199,11 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                     intent.setData(Uri.parse(url));
+                    //reset de valores
+                    Accion=0;
+                    Mensaje=" ";
+                    Contacto=null;
+
                     // startActivity(intent);
 
 
@@ -231,6 +236,11 @@ public class MainActivity extends AppCompatActivity {
 
                     SmsManager sms = SmsManager.getDefault();
                     sms.sendTextMessage(Contacto,null,Mensaje,null,null);
+
+                    //reset de valores
+                    Accion=0;
+                    Mensaje=" ";
+                    Contacto=null;
 
                 }catch (Exception e){
                     Toast.makeText(getApplicationContext(),e.getMessage().toString(),

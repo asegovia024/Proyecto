@@ -12,84 +12,93 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/antonio/AndroidStudioProjects/ProyectoGit/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jar="/Users/antonio/.android/build-cache/6e3a73ca8bc3e05f27cda3ad137ecdb110e4d5bd/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
-        revision="24.0.3"
-        sha1="97bee58d2540db378725b31cf693e8c9d19f32b1">
-        <dex dex="/Users/antonio/AndroidStudioProjects/ProyectoGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_7378b227c0d40ced7dcf45da6e2b6d7317376090/classes.dex" />
+        revision="25.0.0"
+        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
+        <dex dex="/Users/antonio/AndroidStudioProjects/ProyectoGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_b90fc5b1309d6a2aca32d95a904e9667d9dd1259/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/antonio/AndroidStudioProjects/ProyectoGit/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.4.0/jars/classes.jar"
+        jar="/Users/antonio/.android/build-cache/1955d6052447e38c097c880d1b10f70988c396ef/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
-        revision="24.0.3"
-        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
-        <dex dex="/Users/antonio/AndroidStudioProjects/ProyectoGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-23.4.0_07548f71c296c35235ed1bf2a28d897dc921c683/classes.dex" />
+        revision="25.0.0"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="/Users/antonio/AndroidStudioProjects/ProyectoGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_71225b70a73822dc836e9674248a519bdcc45d4b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/antonio/.android/build-cache/61f7366f6b3513be585cc8b4b2cf2ec6337a8385/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="/Users/antonio/AndroidStudioProjects/ProyectoGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_5279653ff0cf5bc26b1f38af19a27e0344f7de2a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/antonio/AndroidStudioProjects/ProyectoGit/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="26699e8057e8b192a20d0496628befe439bd69b4">
+        <dex dex="/Users/antonio/AndroidStudioProjects/ProyectoGit/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_7378b227c0d40ced7dcf45da6e2b6d7317376090/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/antonio/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.4.0/support-annotations-23.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="/Users/antonio/AndroidStudioProjects/ProyectoGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.4.0_385aadc3bf8043ef301effb41b0d3d0df2891736/classes.dex" />
     </item>
     <item
         is-multidex="true"
         jar="/Users/antonio/AndroidStudioProjects/ProyectoGit/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
-        revision="24.0.3"
-        sha1="5fd371b5016662908876f45d9976aca456be8895">
-        <dex dex="/Users/antonio/AndroidStudioProjects/ProyectoGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_64d50843dca56dc37274ab94142d42a5af98f381/classes.dex" />
+        revision="25.0.0"
+        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
+        <dex dex="/Users/antonio/AndroidStudioProjects/ProyectoGit/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_64d50843dca56dc37274ab94142d42a5af98f381/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/antonio/AndroidStudioProjects/ProyectoGit/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/libs/internal_impl-23.4.0.jar"
+        jar="/Users/antonio/.android/build-cache/2056e85dc6ac999c9274eaf745234fa89799b5be/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
-        revision="24.0.3"
-        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
-        <dex dex="/Users/antonio/AndroidStudioProjects/ProyectoGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.4.0_c3dbb377da47e1f768e0ddac7be949fbfa9e3c71/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/antonio/AndroidStudioProjects/ProyectoGit/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
-        <dex dex="/Users/antonio/AndroidStudioProjects/ProyectoGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.4.0_b8e2a4767ea6158f32f408d5163ac59b871a7077/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/antonio/AndroidStudioProjects/ProyectoGit/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.4.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
-        <dex dex="/Users/antonio/AndroidStudioProjects/ProyectoGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-23.4.0_4005d9f946846f3d514c36ebc172a9285af88eae/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/antonio/AndroidStudioProjects/ProyectoGit/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
-        <dex dex="/Users/antonio/AndroidStudioProjects/ProyectoGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.4.0_7dee91bf91652dfe2e742a07d68280e0bc079d8b/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/antonio/AndroidStudioProjects/ProyectoGit/app/build/intermediates/exploded-aar/com.android.support/design/23.4.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
+        revision="25.0.0"
         sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
-        <dex dex="/Users/antonio/AndroidStudioProjects/ProyectoGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-23.4.0_1fe8843b02f7b4d83eeeb079b3041eaf7f2ca466/classes.dex" />
+        <dex dex="/Users/antonio/AndroidStudioProjects/ProyectoGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_550c2a25049f6617bb8e0761ba41c1caf91a2adf/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/antonio/AndroidStudioProjects/ProyectoGit/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.4.0/jars/classes.jar"
+        jar="/Users/antonio/.android/build-cache/bd1a71ab95c890aafcb4819f9ec898ac4049c79f/output/jars/libs/internal_impl-23.4.0.jar"
         jumboMode="true"
         optimize="true"
-        revision="24.0.3"
-        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
-        <dex dex="/Users/antonio/AndroidStudioProjects/ProyectoGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-23.4.0_2eeb34c3ab596077ae0f1d3766092cc043090ad2/classes.dex" />
+        revision="25.0.0"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="/Users/antonio/AndroidStudioProjects/ProyectoGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.4.0_dc1603bbf211ddf655bcc7809ed6b1e3e29caf28/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/antonio/.android/build-cache/4ad855f09194281f7d3c6172acc540f84338607b/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="/Users/antonio/AndroidStudioProjects/ProyectoGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_f5700f1db9255a7fcc98902fb5a6179a384e2e3a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/antonio/.android/build-cache/bd1a71ab95c890aafcb4819f9ec898ac4049c79f/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="/Users/antonio/AndroidStudioProjects/ProyectoGit/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_74606df31780a53aaaec9829345a98a4c1d1fe34/classes.dex" />
     </item>
 
 </items>

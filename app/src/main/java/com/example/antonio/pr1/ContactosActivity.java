@@ -47,6 +47,7 @@ public class ContactosActivity extends AppCompatActivity implements View.OnClick
     NfcAdapter nfcAdapter;
 
 
+    NFCtools n;
 
 
     @Override
@@ -298,6 +299,7 @@ public class ContactosActivity extends AppCompatActivity implements View.OnClick
             }
             Ndef ndef =Ndef.get(tag);
             if(ndef == null){
+                //   n.formatTag(tag,ndefMessage);
                 formatTag(tag, ndefMessage);
             }else {
                 ndef.connect();

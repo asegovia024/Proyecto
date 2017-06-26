@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo"
     android:fitsSystemWindows="true"
     tools:context="com.example.antonio.pr1.MainActivity">
 
@@ -21,10 +22,7 @@
 
     </android.support.design.widget.AppBarLayout>
 
-
-
-
-    <include layout="@layout/content_main" />
+    <!--  <include layout="@layout/content_main" />   -->
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
@@ -32,17 +30,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        android:drawableBottom="@drawable/confi" />
 
+    <!-- app:srcCompat="@android:drawable/ic_dialog_email" />-->
 
-    <EditText
-        android:layout_width="395dp"
-        android:layout_height="266dp"
-        android:id="@+id/TagContent2" />
-
-    <EditText
-        android:layout_width="272dp"
-        android:layout_height="487dp"
-        android:id="@+id/tagContent"/>
 
 </android.support.design.widget.CoordinatorLayout>

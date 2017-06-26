@@ -6,14 +6,14 @@
         android:id="@+id/Info"
         android:orderInCategory="100"
         android:title="@string/AcercaDe"
-        android:icon="@drawable/info"
+        android:icon="@drawable/infor"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/Config"
         android:orderInCategory="100"
         android:title="@string/action_settings"
-        android:icon="@drawable/config"
+        android:icon="@drawable/confi"
         app:showAsAction="ifRoom" />
 
 

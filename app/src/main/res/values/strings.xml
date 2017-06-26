@@ -1,7 +1,9 @@
 <resources>
-    <string name="app_name">Prototipo</string>
+    <string name="app_name">NFComunicator</string>
     <string name="action_settings">Configuracion</string>
     <string name="AcercaDe">Informacion</string>
     <string name="No_tag">Tarjeta no encontrada</string>
+    <string name="addcontacto">Añadir Contacto</string>
+    <string name="addaccion">Añadir Acción</string>
 
 </resources>
