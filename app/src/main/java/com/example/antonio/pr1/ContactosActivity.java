@@ -28,6 +28,8 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -98,7 +100,7 @@ public class ContactosActivity extends AppCompatActivity implements View.OnClick
 
 
         if(intent.hasExtra(NfcAdapter.EXTRA_TAG)) {
-            Toast.makeText(this, "intent nfc", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Escribiendo...", Toast.LENGTH_LONG).show();
 
             Tag tag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
 
@@ -154,6 +156,11 @@ public class ContactosActivity extends AppCompatActivity implements View.OnClick
 
         switch (view.getId()) {
             case R.id.agenda:
+
+
+                Animation zoom2;
+                zoom2= AnimationUtils.loadAnimation(this, R.animator.animacion);
+                agenda.startAnimation(zoom2);
 
                 //reqCode=1;//codificamos con un 1 para el caso de el acceso de la agenda
                 Intent intenta = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
@@ -299,8 +306,8 @@ public class ContactosActivity extends AppCompatActivity implements View.OnClick
             }
             Ndef ndef =Ndef.get(tag);
             if(ndef == null){
-                //   n.formatTag(tag,ndefMessage);
-                formatTag(tag, ndefMessage);
+                   n.formatTag(tag,ndefMessage);
+                //formatTag(tag, ndefMessage);
             }else {
                 ndef.connect();
                 if(!ndef.isWritable()){

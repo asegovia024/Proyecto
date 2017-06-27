@@ -5,7 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class ConfigActivity extends AppCompatActivity {
 
@@ -18,6 +21,8 @@ public class ConfigActivity extends AppCompatActivity {
         setContentView(R.layout.activity_config);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
 
         contacto =(Button)findViewById(R.id.AddCont);
 
@@ -56,5 +61,9 @@ public class ConfigActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
+
+
+
 
 }

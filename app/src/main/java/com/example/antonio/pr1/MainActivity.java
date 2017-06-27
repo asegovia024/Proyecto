@@ -27,6 +27,8 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -37,7 +39,9 @@ import java.io.UnsupportedEncodingException;
 public class MainActivity extends AppCompatActivity {
 
 
+    private static final int READER_FLAGS = 0;
     NfcAdapter nfcAdapter;
+
     EditText tagContent;
     EditText tagContent2;
 
@@ -79,23 +83,39 @@ public class MainActivity extends AppCompatActivity {
         simReady = telephonyManager.getSimState() == TelephonyManager.SIM_STATE_READY;
 
 
-        //boton rosa que hay que activar para ponerle que sea el de configuracion
-        /*
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        //boton fab que te lleva a el menu de configuracion
+        final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.configuracion);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+
+               /* Animation zoom2;
+                zoom2= AnimationUtils.loadAnimation(this, R.animator.animacion);
+                fab.startAnimation(zoom2);*/
+                //evito la animacion ya que salta a otra vista
+
+                //lanzar configuracion de nuevo, asi tenemos mas caminos para acceder
+                Intent config2 = new Intent(MainActivity.this, ConfigActivity.class);
+                startActivity(config2);//abrimos el menu de configuracion
+
+
             }
-        });*/
+        });
 
 
         if (nfcAdapter != null && nfcAdapter.isEnabled()) {
 
         } else {
-            Toast.makeText(this, "Error de Nfc, no disponible", Toast.LENGTH_LONG).show();//cambiar por activacion o por la opcion de activacion del nfc
+
+            nfcAdapter.enableReaderMode(this, null, READER_FLAGS, null);
+
+            Toast.makeText(this, "Error de Nfc, Active el servicio NFC", Toast.LENGTH_LONG).show();//cambiar por activacion o por la opcion de activacion del nfc
         }
+
+
+
+
+
 
     }
 
@@ -162,6 +182,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(info);
 
                 break;
+
         }
 
         return super.onOptionsItemSelected(item);
@@ -349,6 +370,13 @@ public class MainActivity extends AppCompatActivity {
 
         return true;
     }
+
+
+
+
+
+
+
 
 
 

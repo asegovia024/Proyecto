@@ -19,10 +19,14 @@ import android.nfc.tech.NdefFormatable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.ActionMode;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.io.ByteArrayInputStream;
@@ -90,7 +94,7 @@ public class AccionActivity extends AppCompatActivity implements View.OnClickLis
         super.onNewIntent(intent);
 
         if(intent.hasExtra(NfcAdapter.EXTRA_TAG)) {
-            Toast.makeText(this, "intent nfc", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Escribiendo...", Toast.LENGTH_LONG).show();
 
             Tag tag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
             NFCtools n = new NFCtools();
@@ -105,8 +109,8 @@ public class AccionActivity extends AppCompatActivity implements View.OnClickLis
 
 
             try {
-             //   ndefMessage = n.write(nn, tag, false);
-                ndefMessage=write(nn,tag,false);
+                ndefMessage = n.write(nn, tag, false);
+              //  ndefMessage=write(nn,tag,false);
             } catch (IOException e) {
                 e.printStackTrace();
             } catch (FormatException e) {
@@ -145,12 +149,22 @@ public class AccionActivity extends AppCompatActivity implements View.OnClickLis
 
             case R.id.sms:
                 op="1";
-                // do your code
+
+                Animation zoom;
+                zoom= AnimationUtils.loadAnimation(this, R.animator.animacion);
+                sms.startAnimation(zoom);
+                Toast.makeText(this, "Opcion mensaje reconocia", Toast.LENGTH_LONG).show();
+
                 break;
 
             case R.id.call:
                 op="2";
                 // do your code
+                Animation zoom2;
+                zoom2= AnimationUtils.loadAnimation(this, R.animator.animacion);
+                call.startAnimation(zoom2);
+                Toast.makeText(this, "Opcion llamada reconocia", Toast.LENGTH_LONG).show();
+
                 break;
 
           /*  case R.id.wapp:
@@ -227,6 +241,9 @@ public class AccionActivity extends AppCompatActivity implements View.OnClickLis
             }else{*/
                 NdefRecord[] records = {createVcardText(text)};
                 NdefMessage message = new NdefMessage(records);
+
+
+
                 return message;
 
            // }

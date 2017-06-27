@@ -37,11 +37,14 @@ public class NFCtools {
             if (c) {
                 NdefRecord[] records = {createVcardContact("contacto",null,text,null)};
                 NdefMessage message = new NdefMessage(records);
+                NdefRecord.createApplicationRecord("com.example.antonio.pr1");
                 return message;
 
             }else{
                 NdefRecord[] records = {createVcardText(text)};
                 NdefMessage message = new NdefMessage(records);
+                NdefRecord.createApplicationRecord("com.example.antonio.pr1");
+
                 return message;
 
             }

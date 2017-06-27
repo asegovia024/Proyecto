@@ -11,9 +11,9 @@
 
     <item
         android:id="@+id/Config"
+        android:icon="@drawable/confi"
         android:orderInCategory="100"
         android:title="@string/action_settings"
-        android:icon="@drawable/confi"
         app:showAsAction="ifRoom" />
 
 
