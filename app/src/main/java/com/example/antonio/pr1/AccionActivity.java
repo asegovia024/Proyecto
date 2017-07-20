@@ -123,7 +123,7 @@ public class AccionActivity extends AppCompatActivity implements View.OnClickLis
                 Toast.makeText(this, "Mensaje escrito", Toast.LENGTH_LONG).show();
 
             }else{
-                Toast.makeText(this, "el tag es nulo o imposible de escribir", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "La etiqueta es nula o imposible de escribir", Toast.LENGTH_LONG).show();
             }
 
 
@@ -153,7 +153,7 @@ public class AccionActivity extends AppCompatActivity implements View.OnClickLis
                 Animation zoom;
                 zoom= AnimationUtils.loadAnimation(this, R.animator.animacion);
                 sms.startAnimation(zoom);
-                Toast.makeText(this, "Opcion mensaje reconocia", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Opción mensaje reconocida", Toast.LENGTH_LONG).show();
 
                 break;
 
@@ -163,7 +163,7 @@ public class AccionActivity extends AppCompatActivity implements View.OnClickLis
                 Animation zoom2;
                 zoom2= AnimationUtils.loadAnimation(this, R.animator.animacion);
                 call.startAnimation(zoom2);
-                Toast.makeText(this, "Opcion llamada reconocia", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Opción llamada reconocida", Toast.LENGTH_LONG).show();
 
                 break;
 

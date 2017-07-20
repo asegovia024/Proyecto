@@ -17,9 +17,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:drawableBottom="@drawable/address"
+        android:background="@drawable/address"
         android:icon="@drawable/address"
-        android:text="Agenda" />
+        android:text="Agenda"
+        android:layout_centerVertical="true"/>
 
     <EditText
         android:id="@+id/numero"

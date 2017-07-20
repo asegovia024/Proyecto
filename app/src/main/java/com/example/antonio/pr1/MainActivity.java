@@ -276,7 +276,7 @@ public class MainActivity extends AppCompatActivity {
 
 
             }else if (Accion == 3 && Contacto != null) {
-                Toast.makeText(this,"Seccion en desarollo", Toast.LENGTH_LONG).show();
+                Toast.makeText(this,"Sección en desarollo", Toast.LENGTH_LONG).show();
 
             }
 
@@ -336,7 +336,7 @@ public class MainActivity extends AppCompatActivity {
 
         }else if (cadena.indexOf("#") ==1) {
             Accion= Integer.parseInt(cadena.substring(0, 1));
-            Toast.makeText(this,"Accion "+ Accion+ " Guardada", Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Acción "+ Accion+ " Identificada", Toast.LENGTH_LONG).show();
 
             Lacc = true;
 

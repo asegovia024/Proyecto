@@ -18,7 +18,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="18dp"
-        android:drawableBottom="@drawable/call"
+        android:background="@drawable/call1"
         android:text="Llamada" />
 
     <EditText
@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/call"
-        android:drawableBottom="@drawable/sms"
+        android:background="@drawable/sms1"
         android:text="Sms" />
 
 </RelativeLayout>

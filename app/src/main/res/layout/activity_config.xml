@@ -12,19 +12,24 @@
 
     <Button
         android:text="@string/addcontacto"
-        android:layout_width="wrap_content"
+        android:textColor="@color/colorblanco"
+
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:id="@+id/AddCont"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="82dp"
-        android:id="@+id/AddCont" />
+        android:layout_marginBottom="150dp" />
 
     <Button
         android:text="@string/addaccion"
-        android:layout_width="wrap_content"
+        android:textColor="@color/colorblanco"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
         android:id="@+id/AddAcc"
-        android:layout_below="@+id/AddCont"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="48dp" />
 </RelativeLayout>

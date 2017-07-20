@@ -41,7 +41,6 @@ import java.nio.charset.Charset;
 public class ContactosActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button agenda;
-    Button escribircontacto;
     EditText numero;
     int PICK_CONTACT;
 
@@ -68,14 +67,7 @@ public class ContactosActivity extends AppCompatActivity implements View.OnClick
         }
 
 
-       /* escribircontacto = (Button) findViewById(R.id.escribircontacto);
-        escribircontacto.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-
-            }
-        });*/
 
 
 
@@ -87,7 +79,6 @@ public class ContactosActivity extends AppCompatActivity implements View.OnClick
 
 
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_CONTACTS}, 1); // permiso para leer los contactos
-
 
 
     }
@@ -168,13 +159,6 @@ public class ContactosActivity extends AppCompatActivity implements View.OnClick
                 startActivityForResult(intenta, PICK_CONTACT); //abre los contactos
                 break;
 
-          /*  case R.id.escribircontacto://no entra
-                //debugear por aqui
-                Toast.makeText(this, "añadir pulsado " , Toast.LENGTH_LONG).show();
-
-                //abrir otra pantalla (?)
-
-                break;*/
 
         }
 
@@ -204,7 +188,7 @@ public class ContactosActivity extends AppCompatActivity implements View.OnClick
                             phones.moveToFirst();
                             String phn_no = phones.getString(phones.getColumnIndex("data1"));
                             String name = c.getString(c.getColumnIndex(ContactsContract.CommonDataKinds.StructuredPostal.DISPLAY_NAME));
-                            Toast.makeText(this, "contact info : " + phn_no + "\n" + name, Toast.LENGTH_LONG).show();
+                            Toast.makeText(this, "Contacto : " + phn_no + "\n" + name, Toast.LENGTH_LONG).show();
 
                             numero.setText(phn_no);
                         }
@@ -279,7 +263,7 @@ public class ContactosActivity extends AppCompatActivity implements View.OnClick
 
 
             if(ndefFormatable== null) {
-                Toast.makeText(this, "tag no formateable", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Etiqueta no formateable", Toast.LENGTH_LONG).show();
                 return;
             }
             ndefFormatable.connect();
@@ -300,7 +284,7 @@ public class ContactosActivity extends AppCompatActivity implements View.OnClick
     private void WriteNdef2(Tag tag, NdefMessage ndefMessage){
         try{
             if (tag== null){
-                Toast.makeText(this, "el tag es nulo", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "La etiqueta es nula", Toast.LENGTH_LONG).show();
 
                 return;
             }
