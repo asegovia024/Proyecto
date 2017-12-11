@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo"
+    android:background="@drawable/fondo3"
     android:fitsSystemWindows="true"
     tools:context="com.example.antonio.pr1.MainActivity">
 
@@ -31,7 +31,7 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
         app:backgroundTint="@color/colorPrimary"
-        app:srcCompat="@drawable/config" />
+        app:srcCompat="@drawable/confi" />
 
     <!-- app:srcCompat="@android:drawable/ic_dialog_email" />-->
 

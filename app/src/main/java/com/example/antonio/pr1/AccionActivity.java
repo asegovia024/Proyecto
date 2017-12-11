@@ -24,9 +24,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.io.ByteArrayInputStream;
@@ -41,15 +44,19 @@ import static android.R.attr.track;
 
 public class AccionActivity extends AppCompatActivity implements View.OnClickListener{
 
+
     Button sms, call, w;
     EditText ttexto;
 
     NFCtools n;
 
     String op, text;
-
+    Spinner lista;
     Context context;
     NfcAdapter nfcAdapter;
+
+    String[] datos = {"Mensajes recomendados", "He Llegado a casa y estoy bien", "Necesito tu ayuda"};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +83,32 @@ public class AccionActivity extends AppCompatActivity implements View.OnClickLis
         call =(Button)findViewById(R.id.call);
         call.setOnClickListener(this);
 
+
+        lista =(Spinner)findViewById(R.id.spinner);
+        ArrayAdapter<String> spineradapt =new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, datos);
+
+        lista.setAdapter(spineradapt);
+
+        lista.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                switch (position){
+                    case 1:
+                        ((EditText)findViewById(R.id.editText)).setText(datos[1]);
+
+                        break;
+                    case 2:
+                        ((EditText)findViewById(R.id.editText)).setText(datos[2]);
+
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
       /*  w =(Button)findViewById(R.id.wapp);
         w.setOnClickListener(this);*/
 
